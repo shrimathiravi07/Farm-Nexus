@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Book an appointment with a farm advisor on FarmNexus" />
+    <title>Book Appointment | FarmNexus</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bookAppointment.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <img src="assets/logo.png" alt="FarmNexus" class="sidebar-logo" onerror="this.style.display='none'" />
+            <span class="brand-name">FarmNexus</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item" id="nav-dashboard">
+                <img src="assets/icons/dashboard.svg" alt="" class="nav-icon" />
+                <span>Dashboard</span>
+            </a>
+            <a href="bookAppointment.html" class="nav-item active" id="nav-book">
+                <img src="assets/icons/calendar.svg" alt="" class="nav-icon" />
+                <span>Book Appointment</span>
+            </a>
+            <a href="myAppointments.html" class="nav-item" id="nav-appointments">
+                <img src="assets/icons/appointments.svg" alt="" class="nav-icon" />
+                <span>My Appointments</span>
+            </a>
+            <a href="notifications.html" class="nav-item" id="nav-notifications">
+                <img src="assets/icons/bell.svg" alt="" class="nav-icon" />
+                <span>Notifications</span>
+                <span class="badge" id="notif-badge">0</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="btn-logout" id="btn-logout">
+                <img src="assets/icons/logout.svg" alt="" class="nav-icon" />
+                <span>Log Out</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="topbar">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle sidebar">&#9776;</button>
+            <h2 class="page-title">Book Appointment</h2>
+            <div class="topbar-right">
+                <button class="icon-btn" aria-label="Notifications" onclick="window.location.href='notifications.html'">
+                    <img src="assets/icons/bell.svg" alt="Notifications" />
+                    <span class="badge topbar-badge" id="topbar-notif-badge">0</span>
+                </button>
+                <div class="user-avatar" id="user-avatar">F</div>
+            </div>
+        </header>
+
+        <section class="page-body">
+            <div class="form-card">
+                <h1 class="form-title">Schedule a Farm Advisory Session</h1>
+                <p class="form-subtitle">Choose an advisor and pick a date & time that works for you.</p>
+
+                <form id="booking-form" novalidate>
+                    <!-- Step 1: Select Advisor -->
+                    <div class="form-group">
+                        <label for="advisor-select">Select Advisor <span class="required">*</span></label>
+                        <select id="advisor-select" name="advisorId" required>
+                            <option value="">— Choose an Advisor —</option>
+                        </select>
+                        <span class="field-error" id="advisor-error"></span>
+                    </div>
+
+                    <!-- Advisor Info Card -->
+                    <div class="advisor-preview" id="advisor-preview" hidden>
+                        <div class="advisor-avatar" id="adv-avatar">A</div>
+                        <div class="advisor-details">
+                            <strong id="adv-name"></strong>
+                            <span id="adv-specialty" class="chip"></span>
+                            <p id="adv-bio"></p>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Date -->
+                    <div class="form-group">
+                        <label for="appt-date">Preferred Date <span class="required">*</span></label>
+                        <input type="date" id="appt-date" name="date" required />
+                        <span class="field-error" id="date-error"></span>
+                    </div>
+
+                    <!-- Step 3: Time Slot -->
+                    <div class="form-group">
+                        <label>Available Time Slots <span class="required">*</span></label>
+                        <div class="time-slots" id="time-slots">
+                            <p class="hint">Select an advisor and date first.</p>
+                        </div>
+                        <span class="field-error" id="slot-error"></span>
+                        <input type="hidden" id="appt-time" name="time" />
+                    </div>
+
+                    <!-- Step 4: Notes -->
+                    <div class="form-group">
+                        <label for="appt-notes">Additional Notes <span class="optional">(optional)</span></label>
+                        <textarea id="appt-notes" name="notes" rows="4"
+                            placeholder="Describe your concern or topic…"></textarea>
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary"
+                            onclick="window.location.href='dashboard.html'">Cancel</button>
+                        <button type="submit" class="btn-primary" id="btn-submit">
+                            <span id="submit-label">Book Appointment</span>
+                            <span class="spinner" id="submit-spinner" hidden></span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Success State -->
+                <div class="booking-success" id="booking-success" hidden>
+                    <div class="success-icon">✅</div>
+                    <h2>Appointment Booked!</h2>
+                    <p id="success-msg"></p>
+                    <div class="success-actions">
+                        <button class="btn-primary" onclick="window.location.href='myAppointments.html'">View My
+                            Appointments</button>
+                        <button class="btn-secondary" onclick="location.reload()">Book Another</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/bookAppointment.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,215 @@
+/* ============================================
+   FarmNexus – Book Appointment Styles
+   ============================================ */
+
+.form-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: 36px 40px;
+    max-width: 680px;
+    margin: 0 auto;
+    box-shadow: var(--shadow-md);
+}
+
+.form-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 6px;
+}
+
+.form-subtitle {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 28px;
+}
+
+/* ---------- Form Groups ---------- */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.required {
+    color: var(--color-danger);
+    margin-left: 2px;
+}
+
+.optional {
+    color: var(--color-text-muted);
+    font-weight: 400;
+    font-size: 0.82rem;
+}
+
+.form-group input[type="date"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    background: var(--color-bg);
+    transition: border-color var(--transition), box-shadow var(--transition);
+    outline: none;
+}
+
+.form-group input[type="date"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(45, 140, 78, 0.12);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 96px;
+}
+
+.field-error {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-danger);
+    margin-top: 4px;
+    min-height: 16px;
+}
+
+/* ---------- Advisor Preview ---------- */
+.advisor-preview {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: var(--color-primary-light);
+    border: 1px solid rgba(45, 140, 78, 0.2);
+    border-radius: var(--radius-md);
+    padding: 16px 18px;
+    margin-bottom: 22px;
+}
+
+.advisor-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.advisor-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.advisor-details strong {
+    font-size: 0.95rem;
+    color: var(--color-text);
+}
+
+.advisor-details p {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+}
+
+/* ---------- Time Slots ---------- */
+.time-slots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.slot-btn {
+    padding: 8px 16px;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-bg);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.slot-btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background: var(--color-primary-light);
+}
+
+.slot-btn.selected {
+    background: var(--color-primary);
+    color: #fff;
+    border-color: var(--color-primary);
+}
+
+.slot-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.hint {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+}
+
+/* ---------- Form Actions ---------- */
+.form-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+/* ---------- Success State ---------- */
+.booking-success {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.success-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+.booking-success h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.booking-success p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 28px;
+}
+
+.success-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+    .form-card {
+        padding: 24px 18px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+}

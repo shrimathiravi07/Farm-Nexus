@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Your FarmNexus notifications and alerts" />
+    <title>Notifications | FarmNexus</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/notifications.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-brand">
+            <img src="assets/logo.png" alt="FarmNexus" class="sidebar-logo" onerror="this.style.display='none'" />
+            <span class="brand-name">FarmNexus</span>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item" id="nav-dashboard">
+                <img src="assets/icons/dashboard.svg" alt="" class="nav-icon" />
+                <span>Dashboard</span>
+            </a>
+            <a href="bookAppointment.html" class="nav-item" id="nav-book">
+                <img src="assets/icons/calendar.svg" alt="" class="nav-icon" />
+                <span>Book Appointment</span>
+            </a>
+            <a href="myAppointments.html" class="nav-item" id="nav-appointments">
+                <img src="assets/icons/appointments.svg" alt="" class="nav-icon" />
+                <span>My Appointments</span>
+            </a>
+            <a href="notifications.html" class="nav-item active" id="nav-notifications">
+                <img src="assets/icons/bell.svg" alt="" class="nav-icon" />
+                <span>Notifications</span>
+                <span class="badge" id="notif-badge">0</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <button class="btn-logout" id="btn-logout">
+                <img src="assets/icons/logout.svg" alt="" class="nav-icon" />
+                <span>Log Out</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="topbar">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle sidebar">&#9776;</button>
+            <h2 class="page-title">Notifications</h2>
+            <div class="topbar-right">
+                <button class="btn-secondary sm" id="btn-mark-all-read">Mark All Read</button>
+                <div class="user-avatar" id="user-avatar">F</div>
+            </div>
+        </header>
+
+        <section class="page-body">
+            <!-- Filter Tabs -->
+            <div class="notif-filter-bar">
+                <div class="filter-tabs" role="tablist">
+                    <button class="tab-btn active" data-filter="all" role="tab">All</button>
+                    <button class="tab-btn" data-filter="unread" role="tab">Unread</button>
+                    <button class="tab-btn" data-filter="appointment" role="tab">Appointments</button>
+                    <button class="tab-btn" data-filter="system" role="tab">System</button>
+                </div>
+            </div>
+
+            <!-- Notifications List -->
+            <div class="notifications-list" id="notifications-list">
+                <p class="empty-msg">Loading notifications…</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/notifications.js"></script>
+</body>
+
+</html>

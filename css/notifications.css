@@ -1,0 +1,136 @@
+/* ============================================
+   FarmNexus – Notifications Styles
+   ============================================ */
+
+.notif-filter-bar {
+    margin-bottom: 20px;
+}
+
+/* ---------- Notification Items ---------- */
+.notifications-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.notif-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--color-surface);
+    border-radius: var(--radius-md);
+    border-left: 4px solid transparent;
+    transition: background var(--transition);
+    position: relative;
+    cursor: pointer;
+}
+
+.notif-item:hover {
+    background: var(--color-primary-light);
+}
+
+.notif-item.unread {
+    border-left-color: var(--color-primary);
+}
+
+.notif-item.unread::after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-primary);
+}
+
+.notif-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.notif-icon.appointment {
+    background: #EFF6FF;
+}
+
+.notif-icon.system {
+    background: var(--color-bg);
+}
+
+.notif-icon.alert {
+    background: var(--color-accent-light);
+}
+
+.notif-icon.success {
+    background: #ECFDF5;
+}
+
+.notif-content {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.notif-content .notif-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 3px;
+}
+
+.notif-item:not(.unread) .notif-title {
+    font-weight: 500;
+    color: var(--color-text-muted);
+}
+
+.notif-body {
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+    line-height: 1.45;
+}
+
+.notif-time {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    margin-top: 6px;
+    display: block;
+}
+
+/* ---------- Empty State ---------- */
+.notif-empty {
+    text-align: center;
+    padding: 72px 20px;
+    color: var(--color-text-muted);
+}
+
+.notif-empty .icon {
+    font-size: 2.8rem;
+    margin-bottom: 14px;
+}
+
+.notif-empty p {
+    font-size: 0.9rem;
+}
+
+/* ---------- Group Headings ---------- */
+.notif-group-heading {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--color-text-muted);
+    padding: 14px 20px 6px;
+}
+
+@media (max-width: 600px) {
+    .notif-item {
+        padding: 14px 16px;
+    }
+}
