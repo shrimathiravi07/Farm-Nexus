@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Provider Dashboard | FarmNexus</title>
+    <meta name="description" content="Manage your equipment and slots as an equipment provider on FarmNexus." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🌾 FarmNexus</a>
+        <div class="nav-links">
+            <span id="welcomeUser" style="font-weight:600; color: var(--text);"></span>
+            <a href="manageEquipment.html">Equipment</a>
+            <a href="manageSlots.html">Slots</a>
+            <a href="#" id="logoutBtn" class="btn btn-outline">Logout</a>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <header style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem;">
+            <h1>Provider Dashboard</h1>
+            <div style="display:flex; gap:1rem;">
+                <a href="manageEquipment.html" class="btn btn-primary">+ Add Equipment</a>
+                <a href="manageSlots.html" class="btn btn-outline">+ Open Slot</a>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>My Equipment</h3>
+                <p id="equipCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Available Slots</h3>
+                <p id="slotCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Bookings</h3>
+                <p id="bookingCount">0</p>
+            </div>
+        </div>
+
+        <section class="recent-activity" style="margin-top: 3rem;">
+            <h2>Equipment Bookings</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Farmer</th>
+                            <th>Equipment</th>
+                            <th>Date & Time</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="providerBookingsTable">
+                        <tr>
+                            <td colspan="5" style="text-align:center; padding: 2rem; color: var(--text-muted);">
+                                No bookings for your equipment yet.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 FarmNexus. Support local farmers.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/providerDashboard.js"></script>
+</body>
+
+</html>

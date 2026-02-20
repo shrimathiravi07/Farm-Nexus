@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | FarmNexus</title>
+    <meta name="description" content="Your FarmNexus farmer dashboard." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🌾 FarmNexus</a>
+        <div class="nav-links">
+            <span id="welcomeUser" style="font-weight:600; color: var(--text);"></span>
+            <a href="bookAppointment.html">Rent Equipment</a>
+            <a href="myAppointments.html">My Bookings</a>
+            <a href="#" id="logoutBtn" class="btn btn-outline">Logout</a>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <header style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem;">
+            <h1>Farmer Dashboard</h1>
+            <a href="bookAppointment.html" class="btn btn-primary">+ New Booking</a>
+        </header>
+
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card">
+                <h3>Total Bookings</h3>
+                <p id="totalBookings">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Pending Approval</h3>
+                <p id="pendingCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Active Rentals</h3>
+                <p id="confirmedCount">0</p>
+            </div>
+        </div>
+
+        <section class="use-cases-section">
+            <h2 style="margin-bottom: 1.5rem;">🪴 Agriculture Services</h2>
+            <div class="use-case-grid">
+                <a href="bookAppointment.html?category=Tractor" class="use-case-card">
+                    <span class="icon">🚜</span>
+                    <h4>Tractor Booking</h4>
+                    <p>Rent tractors for tilling and plowing.</p>
+                </a>
+                <a href="bookAppointment.html?category=Irrigation" class="use-case-card">
+                    <span class="icon">💧</span>
+                    <h4>Irrigation Slot</h4>
+                    <p>Book your canal water share time.</p>
+                </a>
+                <a href="bookAppointment.html?category=Drone" class="use-case-card">
+                    <span class="icon">🛸</span>
+                    <h4>Drone Spraying</h4>
+                    <p>Pesticide spray service reservation.</p>
+                </a>
+                <a href="bookAppointment.html?category=Harvesting" class="use-case-card">
+                    <span class="icon">🌾</span>
+                    <h4>Harvest Machine</h4>
+                    <p>Combine harvester sharing & slots.</p>
+                </a>
+                <a href="bookAppointment.html?category=Lab" class="use-case-card">
+                    <span class="icon">🧪</span>
+                    <h4>Soil Testing</h4>
+                    <p>Lab appointment & sample submission.</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="recent-activity" style="margin-top: 3rem;">
+            <h2>Recent Activity</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Equipment</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentBookingsTable">
+                        <tr>
+                            <td colspan="4" style="text-align:center; padding: 2rem; color: var(--text-muted);">
+                                Loading your recent bookings...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div style="margin-top: 1.5rem; text-align: right;">
+                <a href="myAppointments.html" class="btn btn-outline"
+                    style="text-decoration:none; padding: 0.5rem 1rem;">View All Bookings &rarr;</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 FarmNexus. Grow more, together.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

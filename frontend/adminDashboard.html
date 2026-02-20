@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel | FarmNexus</title>
+    <meta name="description" content="FarmNexus Administration Control Centre." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🌾 FarmNexus <span class="badge badge-warning"
+                style="font-size: 0.6rem; vertical-align: middle; margin-left: 0.5rem;">ADMIN</span></a>
+        <div class="nav-links">
+            <span id="welcomeUser" style="font-weight:600; color: var(--text);">Admin</span>
+            <a href="#" id="logoutBtn" class="btn btn-outline">Logout</a>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <header style="margin-bottom: 3rem;">
+            <h1>Platform Overview</h1>
+            <p style="color: var(--text-muted);">Monitor users, bookings, and system health.</p>
+        </header>
+
+        <div class="stats-grid" id="adminStats">
+            <div class="stat-card">
+                <h3>Total Platform Users</h3>
+                <p id="totalUsersCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Total Bookings</h3>
+                <p id="totalBookingsCount">0</p>
+            </div>
+            <div class="stat-card">
+                <h3>Active Slots</h3>
+                <p id="totalSlotsCount">0</p>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+            <section class="card">
+                <h2 style="margin-bottom: 1.5rem;">👥 Registered Users</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Join Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <tr>
+                                <td colspan="4" style="text-align:center; padding: 2rem;">Loading users...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2 style="margin-bottom: 1.5rem;">📅 All System Bookings</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Farmer</th>
+                                <th>Service/Equipment</th>
+                                <th>Schedule</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="appointmentsTableBody">
+                            <tr>
+                                <td colspan="4" style="text-align:center; padding: 2rem;">Loading bookings...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 FarmNexus Control Panel. System is running healthy.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/adminDashboard.js"></script>
+</body>
+
+</html>

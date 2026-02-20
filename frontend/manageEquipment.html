@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Equipment | FarmNexus</title>
+    <meta name="description" content="Add and manage your farm equipment listings on FarmNexus." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🌾 FarmNexus</a>
+        <div class="nav-links">
+            <a href="providerDashboard.html">Dashboard</a>
+            <a href="manageSlots.html">Manage Slots</a>
+            <a href="#" id="logoutBtn" class="btn btn-outline">Logout</a>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 2rem;">
+            <h1>My Equipment Fleet</h1>
+            <a href="#addEquipmentForm" class="btn btn-primary">+ Add New</a>
+        </div>
+
+        <section class="card" style="margin-bottom: 3rem; max-width: 800px;">
+            <h2 style="margin-bottom: 1.5rem;">Register New Equipment</h2>
+            <form id="addEquipmentForm">
+                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="form-group">
+                        <label for="equipName">Equipment Name</label>
+                        <input type="text" id="equipName" placeholder="e.g. John Deere Tractor" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="equipCategory">Category</label>
+                        <select id="equipCategory">
+                            <option value="Tractor">Tractor Booking</option>
+                            <option value="Irrigation">Irrigation Water Slot</option>
+                            <option value="Drone">Drone Spraying Service</option>
+                            <option value="Harvesting">Harvest Machine Sharing</option>
+                            <option value="Lab">Soil Testing Lab Appointment</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="equipDesc">Description</label>
+                    <textarea id="equipDesc" rows="3"
+                        placeholder="Tell farmers about the condition and capabilities..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="pricePerHour">Rental Price (₹ per Hour)</label>
+                    <input type="number" id="pricePerHour" min="0" placeholder="500" required />
+                </div>
+                <p id="equipError" style="color: var(--danger); margin-bottom: 1rem;"></p>
+                <button type="submit" class="btn btn-primary btn-full">List Equipment</button>
+            </form>
+        </section>
+
+        <section>
+            <h2 style="margin-bottom: 1.5rem;">Your Listings</h2>
+            <div id="myEquipmentList" class="grid">
+                <!-- Equipment cards will be injected here -->
+                <p style="color: var(--text-muted);">Fetching your listings...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 FarmNexus. High-quality tools for every farmer.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/manageEquipment.js"></script>
+</body>
+
+</html>

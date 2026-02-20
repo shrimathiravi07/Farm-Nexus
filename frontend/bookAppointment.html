@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rent Equipment | FarmNexus</title>
+    <meta name="description" content="Browse available farm equipment and book a slot." />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">🌾 FarmNexus</a>
+        <div class="nav-links">
+            <a href="dashboard.html">Dashboard</a>
+            <a href="myAppointments.html">My Bookings</a>
+            <a href="#" id="logoutBtn" class="btn btn-outline">Logout</a>
+        </div>
+    </nav>
+
+    <main class="dashboard-main">
+        <header style="margin-bottom: 3rem;">
+            <h1>Available Equipment</h1>
+            <p style="color: var(--text-muted);">Find the right tools for your farm and book available time slots.</p>
+        </header>
+
+        <div id="equipmentList" class="grid">
+            <!-- Equipment cards injected here -->
+            <p style="color: var(--text-muted); text-align:center; padding: 3rem; grid-column: 1/-1;">Looking for
+                available gear...</p>
+        </div>
+
+        <!-- Booking Modal (Overlay) -->
+        <div id="bookingModal" class="modal hidden">
+            <div class="modal-card">
+                <header style="margin-bottom: 1.5rem;">
+                    <h2 id="modalEquipmentName">Book Equipment</h2>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Select an available time slot below.</p>
+                </header>
+
+                <div id="slotList" class="slot-selection-grid" style="margin-bottom: 1.5rem;">
+                    <!-- Slots injected here -->
+                </div>
+
+                <div class="form-group">
+                    <label for="bookingNotes">Optional Notes</label>
+                    <textarea id="bookingNotes" placeholder="Any specific requirements for the provider?"
+                        rows="3"></textarea>
+                </div>
+
+                <p id="bookingError" style="color: var(--danger); font-size: 0.875rem; margin-bottom: 1rem;"></p>
+
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <button id="confirmBooking" class="btn btn-primary">Confirm Booking</button>
+                    <button id="closeModal" class="btn btn-outline">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 FarmNexus. Equipment at your fingertips.</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/bookAppointment.js"></script>
+</body>
+
+</html>
