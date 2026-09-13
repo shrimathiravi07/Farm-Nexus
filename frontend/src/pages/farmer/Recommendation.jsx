@@ -1,0 +1,1 @@
+export default function Recommendation() { return <><h1>Recommendations</h1><p>No recommendation functionality exists yet. This page is intentionally empty until a backend implementation is available.</p></>; }
