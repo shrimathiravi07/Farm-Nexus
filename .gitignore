@@ -22,3 +22,14 @@ yarn-error.log*
 backend/.env
 frontend/.env
 
+
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+.pytest_cache/
+
+# Python environment
+.env
+.env.*
